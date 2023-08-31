@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Shop</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- daisy cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="container m-auto px-10 pb-40">
+    <header class="hidden">
+      <nav class="flex justify-between mt-5">
+        <h2 class="text-xl font-semibold">Phone Shop</h2>
+        <button
+          class="btn btn-info capitalize btn-sm rounded bg-blue-400 text-white"
+        >
+          Sign Up
+        </button>
+      </nav>
+      <!-- banner -->
+      <div class="flex flex-col justify-center items-center pt-12">
+        <div class="text-center">
+          <h2 class="font-bold text-3xl">Apple Iphone 13 Pro Max</h2>
+          <p class="text-gray-400 py-3">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority <br />
+            have suffered alteration in some form, by injected humou.
+          </p>
+          <button
+            class="btn btn-info capitalize btn-sm rounded bg-blue-400 text-white"
+          >
+            Buy Now
+          </button>
+        </div>
+        <div class="flex w-2/3">
+          <div><img src="./images/small phone banner.png" alt="" /></div>
+          <div><img src="./images/banner.png" alt="banner picture" /></div>
+          <div><img src="./images/small phone banner.png" alt="" /></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div>
+          <!-- Search Input Area -->
+          <div class="text-center">
+            <h2 class="text-3xl font-semibold pb-3">Search your phone</h2>
+            <input
+              id="input-field"
+              type="text"
+              placeholder="Search your phone"
+              class="input input-bordered w-full max-w-xs bg-gray-100 border-none rounded-r"
+            />
+            <button
+              onclick="handleSearchBtn()"
+              class="btn btn-info capitalize rounded-l bg-[#0D6EFD] text-white"
+            >
+              Search
+            </button>
+          </div>
+          <div class="text-center mt-14 hidden" id="loading-spinner">
+            <span class="loading loading-spinner loading-lg"></span>
+          </div>
+          <div
+            id="validation-container"
+            class="text-center mt-12 font-bold text-2xl"
+          ></div>
+          <!-- [ Product Display - CARD ] -->
+          <div
+            id="card-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-5"
+          ></div>
+
+          <div>
+            <!-- Open the modal using ID.showModal() method -->
+            <button onclick="details_btn_modal.showModal()"></button>
+            <dialog id="details_btn_modal" class="modal">
+              <div id="modal-container"></div>
+            </dialog>
+          </div>
+
+          <div class="text-center pt-10 hidden" id="show-all-btn-container">
+            <button
+              onclick="handleShowAllBtn()"
+              id="handleShowAllBtn"
+              class="btn btn-info capitalize btn rounded bg-blue-400 text-white"
+            >
+              Show All
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
